@@ -2,7 +2,10 @@
 
 namespace App\Services;
 
+use App\Events\Transacted;
 use App\Models\Deposit;
+use App\Models\Transaction;
+use Illuminate\Support\Facades\Auth;
 
 class DepositService
 {
@@ -26,7 +29,7 @@ class DepositService
 
     public function store(int $walletId, int $amount)
     {
-        $user = auth()->user();
+        $user = Auth::user();
 
         $deposit = Deposit::create([
             'wallet_id' => $walletId,
@@ -42,7 +45,7 @@ class DepositService
 
         $this->walletService->decrease($walletId, $amount);
 
-        //todo event create_deposit
+        event(new Transacted(Transaction::CREATE_DEPOSIT, $amount, $user->id, $walletId, $deposit->id));
 
         return $deposit;
     }
@@ -53,28 +56,23 @@ class DepositService
             return false;
         }
 
-        $deposit->wallet->balance += $deposit->invested / 100 * Deposit::DEPOSIT_PERCENT;
-        $deposit->wallet->save();
+        $wallet = $deposit->wallet;
+
+        $amount = $deposit->invested / 100 * $deposit->percent;
+
+        $wallet->balance += $amount;
+        $wallet->save();
 
         $deposit->accrue_times++;
 
+        event(new Transacted(Transaction::ACCRUE, $amount, $deposit->user_id, $wallet->id, $deposit->id));
+
         if($deposit->accrue_times === $deposit->duration){
             $deposit->active = 0;
+
+            event(new Transacted(Transaction::CLOSE_DEPOSIT, 0, $deposit->user_id, $wallet->id, $deposit->id));
         }
 
         $deposit->save();
-
-        //todo  event accrue
-    }
-
-    public function close(int $id)
-    {
-        $deposit = Deposit::find($id);
-
-        $deposit->active = 0;
-
-        $deposit->save();
-
-        //todo event close_deposit
     }
 }

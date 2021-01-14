@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -42,11 +43,6 @@ class User extends Authenticatable
         return $this->hasOne(Wallet::class);
     }
 
-    public function wallets()
-    {
-        return $this->hasMany(Wallet::class);
-    }
-
     public function deposits()
     {
         return $this->hasMany(Deposit::class);
@@ -55,5 +51,22 @@ class User extends Authenticatable
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
+    }
+
+    public static function getWithData(int $id): User
+    {
+        $user = User::with([
+            'wallet',
+            'deposits.transactions',
+            'transactions']
+        )->find($id);
+
+        foreach ($user->deposits as $deposit) {
+            $deposit->profit = $deposit->transactions()
+                ->where('type', Transaction::ACCRUE)
+                ->sum('amount');
+        }
+
+        return $user;
     }
 }

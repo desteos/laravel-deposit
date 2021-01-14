@@ -2,18 +2,20 @@
 
 namespace App\Services;
 
+use App\Events\Transacted;
+use App\Models\Transaction;
 use App\Models\Wallet;
 
 class WalletService
 {
-    public function increase(int $id, int $moneyCount)
+    public function increase(int $id, int $amount)
     {
         $wallet = Wallet::find($id);
 
-        $wallet->balance += $moneyCount;
+        $wallet->balance += $amount;
         $wallet->save();
 
-        //event enter
+        event(new Transacted(Transaction::INCREASE_BALANCE, $amount, $wallet->user_id, $id));
     }
 
     public function decrease(int $id, int $moneyCount)
@@ -22,7 +24,5 @@ class WalletService
 
         $wallet->balance -= $moneyCount;
         $wallet->save();
-
-        //event money out
     }
 }

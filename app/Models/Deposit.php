@@ -29,4 +29,9 @@ class Deposit extends Model
     {
         return $this->belongsTo(Wallet::class);
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

@@ -16,10 +16,10 @@ class Transaction extends Model
         'type',
     ];
 
-    const TRANSACTION_INCREASE_BALANCE = 'enter';
-    const TRANSACTION_CREATE_DEPOSIT = 'create_deposit';
-    const TRANSACTION_ACCRUE = 'accrue';
-    const TRANSACTION_CLOSE_DEPOSIT = 'close_deposit';
+    const INCREASE_BALANCE = 'enter';
+    const CREATE_DEPOSIT = 'create_deposit';
+    const ACCRUE = 'accrue';
+    const CLOSE_DEPOSIT = 'close_deposit';
 
     public function wallet()
     {

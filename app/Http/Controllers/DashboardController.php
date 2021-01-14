@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -24,7 +27,7 @@ class DashboardController extends Controller
     public function index()
     {
         //todo gates
-        $user = auth()->user();
+        $user = User::getWithData(Auth::id());
 
         return view('dashboard', ['user' => $user]);
     }
