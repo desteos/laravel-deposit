@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::post('/wallet/{id}/update', 'WalletController@update')->name('wallet.update');
+Route::post('/deposit/store', 'DepositController@store')->name('deposit.store');
+Route::post('/test', 'DepositController@test')->name('deposit.test');

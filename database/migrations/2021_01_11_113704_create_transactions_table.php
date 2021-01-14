@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->string('type');
             $table->bigInteger('user_id')->unsigned()->index();
             $table->bigInteger('wallet_id')->unsigned()->index();
-            $table->bigInteger('deposit_id')->unsigned()->index();
+            $table->bigInteger('deposit_id')->unsigned()->index()->nullable();
             $table->double('amount');
             $table->timestamps();
 
