@@ -30,12 +30,7 @@ class SufficientAmountInWallet implements Rule
     {
         $wallet = Wallet::find($this->walletId);
 
-        if($wallet->balance < $value){
-
-            return false;
-        }
-
-        return true;
+        return $wallet->balance >= $value;
     }
 
     /**

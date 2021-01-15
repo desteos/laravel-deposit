@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDepositRequest;
-use App\Models\Wallet;
-use Symfony\Component\HttpFoundation\Session\Flash;
 use App\Services\DepositService;
-use Illuminate\Http\Request;
 
 class DepositController extends Controller
 {

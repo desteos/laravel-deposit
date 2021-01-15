@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Deposit;
-use App\Rules\SufficientAmountInWallet;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreDepositRequest extends FormRequest
+class UpdateWalletRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,12 +24,7 @@ class StoreDepositRequest extends FormRequest
     public function rules()
     {
         return [
-            'amount' => [
-                'required',
-                'numeric',
-                'between:'.Deposit::MIN.','.Deposit::MAX,
-                new SufficientAmountInWallet($this->wallet_id)
-            ],
+            'amount' => 'required|numeric|gt:0'
         ];
     }
 }

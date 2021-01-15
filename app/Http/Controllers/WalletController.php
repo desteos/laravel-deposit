@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateWalletRequest;
 use App\Services\WalletService;
-use Illuminate\Http\Request;
 
 class WalletController extends Controller
 {
@@ -22,11 +22,11 @@ class WalletController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @param $id
+     * @param  UpdateWalletRequest  $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id, Request $request)
+    public function update($id, UpdateWalletRequest $request)
     {
         $this->service->increase($id, $request->post('amount'));
 

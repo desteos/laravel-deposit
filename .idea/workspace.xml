@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed4dc377-2f33-417f-ba65-e2d4d1280e76" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-infosoft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-infosoft.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepositController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepositController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreDepositRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreDepositRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/SufficientAmountInWallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/SufficientAmountInWallet.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +164,7 @@
       <workItem from="1610442197653" duration="1767000" />
       <workItem from="1610479679434" duration="11000" />
       <workItem from="1610624337172" duration="19145000" />
-      <workItem from="1610699953229" duration="3436000" />
+      <workItem from="1610699953229" duration="6792000" />
     </task>
     <task id="LOCAL-00001" summary="add migrations, and model folder">
       <created>1610367326719</created>
