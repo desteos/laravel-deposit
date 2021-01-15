@@ -39,7 +39,7 @@
                         <input type="hidden" name="wallet_id" value="{{$user->wallet->id}}">
                         <div class="form-group">
                             <label for="deposit">Открыть депозит</label>
-                            <input name="amount" type="number"  id="deposit" class="form-control mx-sm-3">
+                            <input name="amount" type="number" id="deposit" class="form-control mx-sm-3">
                         </div>
 
                         <button type="submit" class="btn btn-success">Открыть</button>
@@ -105,7 +105,6 @@
                             </tr>
                             </thead>
                             <tbody>
-
                             @foreach($user->transactions as $transaction)
                                 <tr>
                                     <th scope="row">{{$transaction->id}}</th>
