@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDepositRequest;
 use App\Services\DepositService;
 use Illuminate\Http\Request;
 
@@ -26,20 +27,11 @@ class DepositController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function store(Request $request)
+    public function store(StoreDepositRequest $request)
     {
-        //todo validation
         $input = $request->post();
 
         $this->service->store($input['wallet_id'], $input['amount']);
-
-        return redirect('dashboard');
-    }
-
-    public function update($id, Request $request)
-    {
-        //todo validation
-        $this->service->update($id, $request->post('amount'));
 
         return redirect('dashboard');
     }

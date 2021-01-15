@@ -12,6 +12,16 @@
                         </div>
                     @endif
 
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div>Баланс кошелька <span>{{$user->wallet->balance}}</span></div>
 
                     <form class="form-inline mb-3" action="{{route('wallet.update', ['id' => $user->wallet->id])}}" method="post">
@@ -29,7 +39,7 @@
                         <input type="hidden" name="wallet_id" value="{{$user->wallet->id}}">
                         <div class="form-group">
                             <label for="deposit">Открыть депозит</label>
-                            <input name="amount" type="number" min="10" max="100" id="deposit" class="form-control mx-sm-3">
+                            <input name="amount" type="number"  id="deposit" class="form-control mx-sm-3">
                         </div>
 
                         <button type="submit" class="btn btn-success">Открыть</button>
@@ -100,7 +110,7 @@
                                 <tr>
                                     <th scope="row">{{$transaction->id}}</th>
                                     <td>{{$transaction->type}}</td>
-                                    <td>{{$transaction->amount}}</td>
+                                    <td>{{$transaction->amount > 0 ? $transaction->amount : ''}}</td>
                                     <td>{{$transaction->created_at}}</td>
                                 </tr>
                             @endforeach

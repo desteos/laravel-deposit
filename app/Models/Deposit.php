@@ -17,6 +17,8 @@ class Deposit extends Model
         'accrue_times'
     ];
 
+    const MIN = 10;
+    const MAX = 100;
     const ACCRUE_COUNT_PER_DEPOSIT = 10;
     const DEPOSIT_PERCENT = 20;
 

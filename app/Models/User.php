@@ -56,15 +56,14 @@ class User extends Authenticatable
     public static function getWithData(int $id): User
     {
         $user = User::with([
-            'wallet',
-            'deposits.transactions',
-            'transactions']
-        )->find($id);
+                'wallet',
+                'deposits',
+                'transactions'
+            ])
+            ->find($id);
 
         foreach ($user->deposits as $deposit) {
-            $deposit->profit = $deposit->transactions()
-                ->where('type', Transaction::ACCRUE)
-                ->sum('amount');
+            $deposit->profit = ($deposit->invested / 100 * $deposit->percent) * $deposit->accrue_times;
         }
 
         return $user;

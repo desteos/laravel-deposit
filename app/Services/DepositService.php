@@ -20,7 +20,7 @@ class DepositService
     {
         $deposit = Deposit::find($id);
 
-        $deposit->invested += $amount * 1; //to get only positive numbers todo refactor
+        $deposit->invested += $amount;
 
         $this->walletService->decrease($deposit->wallet_id, $amount);
 
