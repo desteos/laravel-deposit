@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed4dc377-2f33-417f-ba65-e2d4d1280e76" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-infosoft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-infosoft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_11_01_2021__13_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-infosoft.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreDepositRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreDepositRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/SufficientAmountInWallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/SufficientAmountInWallet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/DepositService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/DepositService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/WalletService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/WalletService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,10 +132,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="Vagrant" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="Vagrant" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -164,7 +171,21 @@
       <workItem from="1610442197653" duration="1767000" />
       <workItem from="1610479679434" duration="11000" />
       <workItem from="1610624337172" duration="19145000" />
-      <workItem from="1610699953229" duration="6792000" />
+      <workItem from="1610699953229" duration="8185000" />
+      <workItem from="1610714871777" duration="320000" />
+      <workItem from="1610958512601" duration="139000" />
+      <workItem from="1611304372693" duration="7000" />
+      <workItem from="1611304385047" duration="24000" />
+      <workItem from="1611304610043" duration="263000" />
+      <workItem from="1611306296175" duration="26000" />
+      <workItem from="1611306323464" duration="42000" />
+      <workItem from="1611306392293" duration="560000" />
+      <workItem from="1611319645693" duration="48000" />
+      <workItem from="1611323753590" duration="661000" />
+      <workItem from="1611692969660" duration="1029000" />
+      <workItem from="1611732902125" duration="690000" />
+      <workItem from="1612184279910" duration="1943000" />
+      <workItem from="1612262058245" duration="2199000" />
     </task>
     <task id="LOCAL-00001" summary="add migrations, and model folder">
       <created>1610367326719</created>

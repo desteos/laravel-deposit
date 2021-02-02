@@ -16,17 +16,6 @@ class DepositService
         $this->walletService = $walletService;
     }
 
-    public function update(int $id, int $amount)
-    {
-        $deposit = Deposit::find($id);
-
-        $deposit->invested += $amount;
-
-        $this->walletService->decrease($deposit->wallet_id, $amount);
-
-        //event
-    }
-
     public function store(int $walletId, int $amount)
     {
         $user = Auth::user();

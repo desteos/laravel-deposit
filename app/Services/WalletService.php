@@ -8,7 +8,7 @@ use App\Models\Wallet;
 
 class WalletService
 {
-    public function increase(int $id, int $amount)
+    public function increase(int $id, int $amount):void
     {
         $wallet = Wallet::find($id);
 
@@ -18,11 +18,11 @@ class WalletService
         event(new Transacted(Transaction::INCREASE_BALANCE, $amount, $wallet->user_id, $id));
     }
 
-    public function decrease(int $id, int $moneyCount)
+    public function decrease(int $id, int $amount):void
     {
         $wallet = Wallet::find($id);
 
-        $wallet->balance -= $moneyCount;
+        $wallet->balance -= $amount;
         $wallet->save();
     }
 }
