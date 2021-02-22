@@ -1,4 +1,4 @@
-1. настройте .env на вашу mysql или postgresql базу
+1. настройте .env на mysql или postgresql базу
 
 2. php artisan migrate
 
